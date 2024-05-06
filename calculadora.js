@@ -1,136 +1,167 @@
-var capturaNumero = document.getElementById("display").innerHTML
-var operacionDos = document.getElementById("display").innerHTML 
+var capturaNumeroUno = 0;
+var capturaNumeroDos = 0;
+var captura_simbolo;
+let btn_mas = document.getElementById("mas")
+let btn_igual = document.getElementById("igual")
 
 document.getElementById("0").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior === "0") {
-        document.getElementById("display").innerHTML = "0"        
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    
+    if (capturaNumeroUno == 0) {
+        document.getElementById("display").innerHTML = 0        
     } else {
-        var numeroNuevo = displayAnterior + 0 
-        document.getElementById("display").innerHTML = numeroNuevo    
+        var capturaNumeroDos = capturaNumeroUno + 0 
+        document.getElementById("display").innerHTML = capturaNumeroDos    
     }
 }
 
 document.getElementById("1").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior === "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+
+    if (capturaNumeroUno == 0) {
         document.getElementById("display").innerHTML = 1
     } else {
-        var numeroNuevo = displayAnterior + 1
-        document.getElementById("display").innerHTML = numeroNuevo 
+        var capturaNumeroDos = capturaNumeroUno + 1
+        document.getElementById("display").innerHTML = capturaNumeroDos
     } 
 }
 
 document.getElementById("2").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+
+    if (capturaNumeroUno == 0) {
         document.getElementById("display").innerHTML = 2
     } else {
-        var numeroNuevo = displayAnterior + 2;
-        document.getElementById("display").innerHTML = numeroNuevo;        
+        var capturaNumeroDos = capturaNumeroUno + 2;
+        document.getElementById("display").innerHTML = capturaNumeroDos;        
     }
 }
 
 document.getElementById("3").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    if (capturaNumeroUno == 0) {
         document.getElementById("display").innerHTML = 3        
     } else {
-        var numeroNuevo = displayAnterior + 3
-        document.getElementById("display").innerHTML = numeroNuevo    
+        var capturaNumeroDos = capturaNumeroUno + 3
+        document.getElementById("display").innerHTML = capturaNumeroDos
     }
 }
 
 document.getElementById("4").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    if (capturaNumeroUno == 0) {
         document.getElementById("display").innerHTML = 4
     } else {
-        var numeroNuevo = displayAnterior + 4
-        document.getElementById("display").innerHTML = numeroNuevo        
+        var capturaNumeroDos = capturaNumeroUno + 4
+        document.getElementById("display").innerHTML = capturaNumeroDos
     }
 }
 
 document.getElementById("5").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    if (capturaNumeroUno == 0) {
         document.getElementById("display"). innerHTML = 5        
     } else {
-        var numeroNuevo = displayAnterior + 5
-        document.getElementById("display").innerHTML = numeroNuevo         
+        var capturaNumeroDos = capturaNumeroUno + 5
+        document.getElementById("display").innerHTML = capturaNumeroDos         
     }
 }
 
 document.getElementById("6").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    if (capturaNumeroUno == 0) {
         document.getElementById("display"). innerHTML = 6        
     } else {
-        var numeroNuevo = displayAnterior + 6
-        document.getElementById("display").innerHTML = numeroNuevo 
+        var capturaNumeroDos = capturaNumeroUno + 6
+        document.getElementById("display").innerHTML = capturaNumeroDos
     }
 }
 
 document.getElementById("7").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    if (capturaNumeroUno == 0) {
         document.getElementById("display").innerHTML = 7
     } else {
-        var numeroNuevo = displayAnterior + 7
-        document.getElementById("display").innerHTML = numeroNuevo     
+        var capturaNumeroDos = capturaNumeroUno + 7
+        document.getElementById("display").innerHTML = capturaNumeroDos     
     }
 }
 
 document.getElementById("8").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    if (capturaNumeroUno == 0) {
         document.getElementById("display").innerHTML = 8       
     } else {
-        var numeroNuevo = displayAnterior + 8
-        document.getElementById("display").innerHTML = numeroNuevo     
+        var capturaNumeroDos = capturaNumeroUno + 8
+        document.getElementById("display").innerHTML = capturaNumeroDos     
     }
 }
 
 document.getElementById("9").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML;
-    if (displayAnterior == "0") {
+    var capturaNumeroUno = document.getElementById("display").innerHTML;
+    
+    if (capturaNumeroUno == 0) {
         document.getElementById("display").innerHTML = 9
     } else {
-        var numeroNuevo = displayAnterior + 9
-        document.getElementById("display").innerHTML = numeroNuevo 
+        var capturaNumeroDos = capturaNumeroUno + 9
+        document.getElementById("display").innerHTML = capturaNumeroDos 
     }    
 }
 
-//las cinco operaciones
+//las cinco operaciones + igual
 
 document.getElementById("mas").onclick = function () {
-    var displayAnterior = document.getElementById("display").innerHTML
-    var numeroNuevo = displayAnterior + "+"   
-    document.getElementById("display").innerHTML = numeroNuevo
+    let displayAnterior = document.getElementById("display").innerHTML
+
+    if (capturaNumeroUno == 0) {
+        capturaNumeroUno = displayAnterior
+    }else{
+        capturaNumeroDos = displayAnterior
+    }
+    captura_simbolo = "+";
+    document.getElementById("display").innerHTML = "";
 }
 
 document.getElementById("menos").onclick = function () {
-    var displayAnterior = document.getElementById("display").innerHTML
-    var numeroNuevo = displayAnterior + "-"
-    document.getElementById("display").innerHTML = numeroNuevo
+    let displayAnterior = document.getElementById("display").innerHTML
+
+    if (capturaNumeroUno == 0){
+        capturaNumeroUno = displayAnterior
+    }
+    captura_simbolo = "-"
+    document.getElementById("display").innerHTML = "";
 }
 
 document.getElementById("por").onclick = function () {
     var displayAnterior = document.getElementById("display").innerHTML
-    var numeroNuevo = displayAnterior + "*"
-    document.getElementById("display").innerHTML = numeroNuevo
+
+    if (capturaNumeroUno == 0) {
+        capturaNumeroUno = displayAnterior        
+    }
+
+    captura_simbolo = "*"
+    document.getElementById("display").innerHTML = ""
 }
 
 document.getElementById("dividido").onclick = function () {
     var displayAnterior = document.getElementById("display").innerHTML
-    var numeroNuevo = displayAnterior + "/"
-    document.getElementById("display").innerHTML = numeroNuevo
+
+    if(displayAnterior == 0) {
+        capturaNumeroUno = displayAnterior
+    }
+    captura_simbolo = "/"
+    document.getElementById("display").innerHTML = ""
 }
 
 document.getElementById("raiz").onclick = function () {
     var displayAnterior = document.getElementById("display").innerHTML
-    var numeroNuevo = Math.sqrt(displayAnterior)
-    document.getElementById("display").innerHTML = numeroNuevo
+    
+    if (displayAnterior == 0){
+        capturaNumeroUno = displayAnterior
+    }
+    var capturaNumeroUno = Math.sqrt(capturaNumeroUno)
+    
+    document.getElementById("display").innerHTML = ""
 }
 
 //botones de borrar and +/-
@@ -139,29 +170,60 @@ document.getElementById("on").onclick = function(){
 }
 
 document.getElementById("sign").onclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML
-    if (displayAnterior == "0") {
-        document.getElementById("display").innerHTML = displayAnterior
+    var capturaNumeroUno = document.getElementById("display").innerHTML
+    if (capturaNumeroUno == "0") {
+        document.getElementById("display").innerHTML = capturaNumeroUno
     } else {
-        var numeroNuevo = displayAnterior 
-        document.getElementById("display").innerHTML = "-" + numeroNuevo
+        var capturaNumeroDos = capturaNumeroUno 
+        document.getElementById("display").innerHTML = "-" + capturaNumeroDos
     }
 }
 
 document.getElementById("sign").ondblclick = function(){
-    var displayAnterior = document.getElementById("display").innerHTML
-    if (displayAnterior == "0") {
-        document.getElementById("display").innerHTML = displayAnterior
+    var capturaNumeroUno = document.getElementById("display").innerHTML
+    if (capturaNumeroUno == "0") {
+        document.getElementById("display").innerHTML = capturaNumeroUno
     } else {
-        var numeroNuevo = displayAnterior 
-        document.getElementById("display").innerHTML = "+" + numeroNuevo
+        var capturaNumeroDos = capturaNumeroUno 
+        document.getElementById("display").innerHTML = "+" + capturaNumeroDos
     }
 }
 
-//operaciones para el resultado
+document.getElementById("igual").onclick = function(){
+    var capturaNumeroUno = document.getElementById("display").innerHTML
+    var capturaNumeroDos = capturaNumeroUno
+    
+    document.getElementById("display").innerHTML = capturaNumeroDos
+}
 
-document.getElementById("igual").onclick =function(){
-    if (capturaNumero === "igual") {
-        capturaNumero = eval(displayAnterior) 
+
+document.getElementById("igual").onclick = function(){
+    calculadora();
+}
+
+var respuestaOperacion = document.getElementById("display").innerHTML
+
+function calculadora() {
+
+    if (captura_simbolo == "-" || captura_simbolo == "+" || captura_simbolo == "*" || captura_simbolo == "/" ) {
+        let respuesta;
+        switch(captura_simbolo){
+            case "-":
+                respuesta = capturaNumeroUno - capturaNumeroDos
+                break
+            case "+":
+                respuesta = capturaNumeroUno + capturaNumeroDos
+                break
+            case "*":
+                respuesta = capturaNumeroUno * capturaNumeroDos
+                break
+            case "/":
+                respuesta = capturaNumeroUno / capturaNumeroDos
+                break
+            }
+            console.log(respuesta);
+            respuestaOperacion.innerText = respuesta
+    }else{
+        respuestaOperacion.innerText = "Calculo imposible de calcular "
     }
 }
