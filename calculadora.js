@@ -1,5 +1,5 @@
-var capturaNumeroUno = 0;
-var capturaNumeroDos = 0;
+var capturaNumeroUno;
+var capturaNumeroDos;
 var captura_simbolo;
 let btn_mas = document.getElementById("mas")
 let btn_igual = document.getElementById("igual")
@@ -108,59 +108,41 @@ document.getElementById("9").onclick = function(){
     }    
 }
 
+
 //las cinco operaciones + igual
 
 document.getElementById("mas").onclick = function () {
     let displayAnterior = document.getElementById("display").innerHTML
-
-    if (capturaNumeroUno == 0) {
-        capturaNumeroUno = displayAnterior
-    }else{
-        capturaNumeroDos = displayAnterior
-    }
+    capturaNumeroUno = displayAnterior;
     captura_simbolo = "+";
     document.getElementById("display").innerHTML = "";
 }
 
 document.getElementById("menos").onclick = function () {
     let displayAnterior = document.getElementById("display").innerHTML
-
-    if (capturaNumeroUno == 0){
-        capturaNumeroUno = displayAnterior
-    }
+    capturaNumeroUno = displayAnterior    
     captura_simbolo = "-"
     document.getElementById("display").innerHTML = "";
 }
 
 document.getElementById("por").onclick = function () {
     var displayAnterior = document.getElementById("display").innerHTML
-
-    if (capturaNumeroUno == 0) {
-        capturaNumeroUno = displayAnterior        
-    }
-
+    capturaNumeroUno = displayAnterior
     captura_simbolo = "*"
     document.getElementById("display").innerHTML = ""
 }
 
 document.getElementById("dividido").onclick = function () {
     var displayAnterior = document.getElementById("display").innerHTML
-
-    if(displayAnterior == 0) {
-        capturaNumeroUno = displayAnterior
-    }
+    capturaNumeroUno = displayAnterior
     captura_simbolo = "/"
     document.getElementById("display").innerHTML = ""
 }
 
 document.getElementById("raiz").onclick = function () {
     var displayAnterior = document.getElementById("display").innerHTML
-    
-    if (displayAnterior == 0){
-        capturaNumeroUno = displayAnterior
-    }
+    capturaNumeroUno = displayAnterior
     var capturaNumeroUno = Math.sqrt(capturaNumeroUno)
-    
     document.getElementById("display").innerHTML = ""
 }
 
@@ -190,39 +172,33 @@ document.getElementById("sign").ondblclick = function(){
 }
 
 document.getElementById("igual").onclick = function(){
-    var capturaNumeroUno = document.getElementById("display").innerHTML
-    var capturaNumeroDos = capturaNumeroUno
-    
-    document.getElementById("display").innerHTML = capturaNumeroDos
-}
-
-
-document.getElementById("igual").onclick = function(){
+    var pantalla = document.getElementById("display").innerHTML;
+    capturaNumeroDos = pantalla
     calculadora();
 }
 
-var respuestaOperacion = document.getElementById("display").innerHTML
+
+var respuestaOperacion = document.getElementById("display");
 
 function calculadora() {
-
+    console.log("felipe");
     if (captura_simbolo == "-" || captura_simbolo == "+" || captura_simbolo == "*" || captura_simbolo == "/" ) {
         let respuesta;
         switch(captura_simbolo){
             case "-":
-                respuesta = capturaNumeroUno - capturaNumeroDos
+                respuesta = parseInt(capturaNumeroUno) - parseInt(capturaNumeroDos)
                 break
             case "+":
-                respuesta = capturaNumeroUno + capturaNumeroDos
+                respuesta = parseInt(capturaNumeroUno) + parseInt(capturaNumeroDos)
                 break
             case "*":
-                respuesta = capturaNumeroUno * capturaNumeroDos
+                respuesta = parseInt(capturaNumeroUno) * parseInt(capturaNumeroDos)
                 break
             case "/":
-                respuesta = capturaNumeroUno / capturaNumeroDos
+                respuesta = parseInt(capturaNumeroUno) / parseInt(capturaNumeroDos)
                 break
-            }
-            console.log(respuesta);
-            respuestaOperacion.innerText = respuesta
+        }
+        respuestaOperacion.innerHTML = respuesta
     }else{
         respuestaOperacion.innerText = "Calculo imposible de calcular "
     }
